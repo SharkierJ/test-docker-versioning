@@ -1,7 +1,7 @@
 services:
 
   products:
-    git_url: git@github.com:launchany/microservices-sinatra-products.git
+    git_url: git@github.com:sharkierj/test-docker-versioning.git
     git_branch: master
     command: bundle exec ruby products_service.rb
     build_root: .
