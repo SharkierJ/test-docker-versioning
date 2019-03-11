@@ -1,2 +1,1 @@
-require './app'
-run Sinatra::Application
+require 'products_service.rb'
