@@ -1,4 +1,5 @@
 #!/bin/bash
+./secrects.sh
 
 set -ex
 # SET THE FOLLOWING VARIABLES
