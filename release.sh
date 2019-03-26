@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set -ex
 # SET THE FOLLOWING VARIABLES
 # docker hub username
@@ -5,7 +7,7 @@ USERNAME=sharkierj
 # image name
 IMAGE=version-test
 # ensure we're up to date
-git pull
+#git pull
 # bump version
 docker run --rm -v "$PWD":/app sharkierj/version-test patch
 version=`cat VERSION`
@@ -17,7 +19,7 @@ echo "head: $head"
 # tag it
 git add -A
 git tag -a "$version" $head -m "version $version"
-git push origin -f --tags
+git push --tags
 docker tag $USERNAME/$IMAGE:latest $USERNAME/$IMAGE:$version
 # push it
 docker push $USERNAME/$IMAGE:latest
