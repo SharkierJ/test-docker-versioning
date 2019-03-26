@@ -10,14 +10,16 @@ git pull
 docker run --rm -v "$PWD":/app sharkierj/version-test patch
 version=`cat VERSION`
 echo "version: $version"
+head=`git rev-parse --short=7 HEAD`
+echo "head: $head"
 # run build
-./build.sh
+docker build -t $USERNAME/$IMAGE:$version .
 # tag it
 git add -A
 git commit -m "version $version"
-git tag -a "$version" -m "version $version"
+git tag -a "$version" $head -m "version $version"
 git push
-git push --tags
+git push origin -f --tags
 docker tag $USERNAME/$IMAGE:latest $USERNAME/$IMAGE:$version
 # push it
 docker push $USERNAME/$IMAGE:latest
