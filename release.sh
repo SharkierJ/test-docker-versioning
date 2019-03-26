@@ -1,5 +1,5 @@
 #!/bin/bash
-./secrects.sh
+./secrets.sh
 
 set -ex
 # SET THE FOLLOWING VARIABLES
