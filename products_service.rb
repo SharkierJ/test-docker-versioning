@@ -1,3 +1,4 @@
+# added test comment
 # Encoding: utf-8
 require 'rubygems'
 require 'bundler'
@@ -29,13 +30,13 @@ end
 class Product
   include Mongoid::Document
   include Mongoid::Timestamps
-  
+
   field :name, type: String
 end
 
 module ProductRepresenter
   include Roar::JSON::HAL
-  
+
   property :name
   property :created_at, :writeable=>false
 
@@ -51,7 +52,7 @@ end
 
 post '/products/?' do
   name = params[:name]
-  
+
   if name.nil? or name.empty?
     halt 400, {:message=>"name field cannot be empty"}.to_json
   end
