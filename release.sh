@@ -1,3 +1,4 @@
+#added test comment
 #!/bin/bash
 ./secrets.sh
 
