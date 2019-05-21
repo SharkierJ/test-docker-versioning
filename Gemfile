@@ -13,3 +13,4 @@ gem 'bson_ext'
 # Roar/Representable
 gem 'roar'
 gem 'multi_json'
+
