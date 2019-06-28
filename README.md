@@ -38,3 +38,5 @@ Get a list of products (empty by default):
 Add a new product:
 
 > curl -X POST http://127.0.0.1:4567/products -F "name=My Product"
+>
+>
